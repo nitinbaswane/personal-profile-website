@@ -6,229 +6,124 @@ body {
     background-color: #000000;
     color: #ffffff;
     display: flex;
+    flex-direction: column; /* Stack items on small screens */
 }
 
 /* Sidebar */
 .sidebar {
-    width: 250px;
-    height: 100vh;
+    width: 100%;
+    height: auto;
     background-color: #000;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
+    padding: 10px;
+    position: static; /* Remove fixed positioning on mobile */
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center elements in sidebar */
+    flex-direction: row; /* Stack items horizontally */
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
 }
 
 /* Profile Image Styles */
 .profile-image img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Makes the image circular */
-    border: 4px solid #1DB954; /* Spotify Green border */
-    margin-bottom: 20px; /* Space between image and logo */
+    width: 80px; /* Reduce image size */
+    height: 80px;
+    margin-bottom: 10px;
 }
 
+/* Logo */
 .logo {
-    color: #1DB954;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-.logo:hover{
-    color: #ffffff;
+    font-size: 18px; /* Smaller font size for mobile */
+    margin-bottom: 20px;
 }
 
 /* Menu Links */
 .menu-links {
-    list-style: none;
-    padding: 0;
-    text-align: center;
+    display: flex;
+    flex-direction: row; /* Arrange links horizontally */
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap links if necessary */
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
 }
 
 .menu-links li {
-    margin-bottom: 20px;
+    margin: 5px 10px; /* Adjust spacing for mobile */
 }
 
 .menu-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-}
-
-.menu-links a:hover {
-    color: #1db937;
+    font-size: 14px; /* Smaller font size for links */
 }
 
 /* Main Content */
 .content {
-    margin-left: 350px;
-    padding: 40px;
+    margin: 0; /* Remove left margin */
+    padding: 20px;
     flex-grow: 1;
-    background-color: #000000;
 }
 
 /* About Section */
-.about {
-    padding: 60px 0;
+.about h2, .contact h2, .projects h2 {
+    font-size: 1.8em; /* Smaller font size for headings */
+    text-align: center; /* Center-align headings */
 }
 
-.about h2 {
-    font-size: 2.5em;
-    color: #fff;
+.about p, .contact p, .project-card p {
+    font-size: 1em; /* Smaller font size for text */
+    line-height: 1.5;
 }
 
-.about p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #ffffff;
-}
-
-/* Contact Section */
-.contact {
-    padding: 60px 0;
-}
-
-.contact h2 {
-    font-size: 2.5em;
-    color: #fff;
-}
-
+/* Contact Form */
 .contact form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #ffffff;
+    padding: 10px;
 }
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    border: none;
-    border-radius: 4px;
-    background-color: #333;
-    color: #fff;
+    padding: 8px; /* Adjust padding for smaller screens */
+    font-size: 0.9em;
 }
 
-button {
-    background-color: #1DB954;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #1ed760;
-}
-
-/* Project Section Styles */
-.projects {
-    padding: 50px 0;
+/* Buttons */
+button, .download-btn {
+    font-size: 0.9rem; /* Adjust font size */
+    padding: 8px 16px; /* Reduce padding */
 }
 
 /* Project Grid Layout */
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
-    padding: 20px;
-}
-
-/* Project Card Styles */
-.project-card {
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;  /* Start with invisible cards for animation */
-    transform: translateY(50px);  /* Start with an offset for animation */
-}
-
-/* Add Animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.project-card {
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-/* Hover Effect on Project Cards */
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.project-card h3 {
-    margin-top: 0;
-    color: #1DB954;
-}
-
-.project-card p {
-    color: #7f8c8d;
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 15px; /* Adjust spacing between cards */
+    padding: 10px;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (min-width: 769px) {
     .sidebar {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .content {
-        margin-left: 0;
-        padding: 20px;
+        margin-left: 350px;
+        padding: 40px;
     }
 
     .project-grid {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
     }
 }
-.download-btn {
-    display: inline-block;
-    padding: 0.7rem 2rem;
-    font-size: 1rem;
-    color: white;
-    background-color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
 
-.download-btn:hover {
-    background-color: #1DB954;
-}
-.certificates {
-    font-size: 1.2em;
-
-}
-.skills{
-    font-size: 1.2em;
-}
-.resume{
-    font-size: 1.2em;
+/* Hide Sidebar Menu Links on Small Screens (Optional) */
+@media (max-width: 480px) {
+    .menu-links {
+        display: none;
+    }
 }
