@@ -1,0 +1,234 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #000;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements in sidebar */
+}
+
+/* Profile Image Styles */
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image circular */
+    border: 4px solid #1DB954; /* Spotify Green border */
+    margin-bottom: 20px; /* Space between image and logo */
+}
+
+.logo {
+    color: #1DB954;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.logo:hover{
+    color: #ffffff;
+}
+
+/* Menu Links */
+.menu-links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu-links li {
+    margin-bottom: 20px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.menu-links a:hover {
+    color: #1db937;
+}
+
+/* Main Content */
+.content {
+    margin-left: 350px;
+    padding: 40px;
+    flex-grow: 1;
+    background-color: #000000;
+}
+
+/* About Section */
+.about {
+    padding: 60px 0;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    color: #fff;
+}
+
+.about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 0;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    color: #fff;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+
+button {
+    background-color: #1DB954;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1ed760;
+}
+
+/* Project Section Styles */
+.projects {
+    padding: 50px 0;
+}
+
+/* Project Grid Layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+/* Project Card Styles */
+.project-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;  /* Start with invisible cards for animation */
+    transform: translateY(50px);  /* Start with an offset for animation */
+}
+
+/* Add Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Hover Effect on Project Cards */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #1DB954;
+}
+
+.project-card p {
+    color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .project-grid {
+        flex-direction: column;
+    }
+}
+.download-btn {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #1DB954;
+}
+.certificates {
+    font-size: 1.2em;
+
+}
+.skills{
+    font-size: 1.2em;
+}
+.resume{
+    font-size: 1.2em;
+}
