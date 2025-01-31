@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #000000;
     color: #ffffff;
-    display: flex;
+    display: flex;justify-content: center;
     flex-direction: column; /* Stack items on small screens */
 }
 
