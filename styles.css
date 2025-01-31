@@ -9,7 +9,7 @@ body {
     flex-direction: column; /* Stack items on small screens */
 }
 
-/* Sidebar */
+
 .sidebar {
     width: 100%;
     height: auto;
